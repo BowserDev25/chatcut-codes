@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChatCut Free Codes — Stop Paying for Invite Codes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+::selection { background: rgba(194,135,255,0.3); color: #fff; }
+
+body {
+  background: #0a0a0a;
+  color: #e8e6e3;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pulse { 0%,100% { opacity: 0.5; } 50% { opacity: 1; } }
+@keyframes float {
+  0%,100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes glow {
+  0%,100% { box-shadow: 0 0 30px rgba(194,135,255,0.08), inset 0 0 30px rgba(194,135,255,0.02); }
+  50% { box-shadow: 0 0 50px rgba(194,135,255,0.15), inset 0 0 50px rgba(194,135,255,0.04); }
+}
+
+/* Background orbs */
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(80px);
+}
+.orb-1 {
+  width: 500px; height: 500px;
+  background: rgba(194,135,255,0.04);
+  top: -150px; right: -100px;
+  animation: float 8s ease-in-out infinite;
+}
+.orb-2 {
+  width: 400px; height: 400px;
+  background: rgba(100,180,255,0.03);
+  bottom: -100px; left: -100px;
+  animation: float 10s ease-in-out infinite 2s;
+}
+
+/* Content */
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+}
+
+.hero-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: #c287ff;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  animation: slideUp 0.6s ease both;
+}
+h1 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(48px, 8vw, 80px);
+  font-weight: 400;
+  color: #e8e6e3;
+  line-height: 1.0;
+  margin-bottom: 16px;
+  animation: slideUp 0.6s ease 0.08s both;
+}
+h1 em { color: #c287ff; font-style: italic; }
+.subtitle {
+  font-size: 17px;
+  color: #777;
+  line-height: 1.65;
+  max-width: 440px;
+  margin: 0 auto 20px;
+  animation: slideUp 0.6s ease 0.16s both;
+}
+
+/* Live counter */
+.live-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: #666;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 44px;
+  animation: slideUp 0.6s ease 0.24s both;
+}
+.live-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #81c784;
+  animation: pulse 2s ease-in-out infinite;
+}
+.live-bar .num { color: #e8e6e3; font-weight: 500; }
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  animation: slideUp 0.6s ease 0.32s both;
+}
+
+.card {
+  position: relative;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 20px;
+  padding: 36px 28px 32px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute; inset: 0;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255,255,255,0.14);
+}
+.card:hover::before { opacity: 1; }
+
+.card-get::before { background: radial-gradient(ellipse at center, rgba(194,135,255,0.06) 0%, transparent 70%); }
+.card-get:hover { border-color: rgba(194,135,255,0.25); animation: glow 3s ease-in-out infinite; }
+
+.card-share::before { background: radial-gradient(ellipse at center, rgba(100,200,150,0.05) 0%, transparent 70%); }
+.card-share:hover { border-color: rgba(100,200,150,0.2); }
+
+.card-icon {
+  font-size: 36px;
+  margin-bottom: 16px;
+  display: block;
+  transition: transform 0.35s ease;
+}
+.card:hover .card-icon { transform: scale(1.1); }
+
+.card-title {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 26px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.card-get .card-title { color: #c287ff; }
+.card-share .card-title { color: #81c784; }
+
+.card-desc {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.55;
+}
+
+.card-arrow {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #444;
+  transition: all 0.35s ease;
+}
+.card:hover .card-arrow { color: #aaa; transform: translateX(4px); }
+
+/* Queue overlay */
+.queue-overlay {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(12px);
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+.queue-overlay.show { display: flex; }
+.queue-box {
+  background: #111;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 48px 40px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  animation: slideUp 0.4s ease;
+}
+.queue-box h2 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.queue-box h2 em { color: #c287ff; font-style: italic; }
+.queue-sub { color: #777; font-size: 14px; margin-bottom: 28px; line-height: 1.5; }
+.queue-position {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: 64px;
+  color: #c287ff;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.queue-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 28px;
+}
+.queue-bar {
+  width: 100%;
+  height: 3px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.queue-bar-inner {
+  height: 100%;
+  background: linear-gradient(90deg, #c287ff, #a066dd);
+  border-radius: 3px;
+  animation: pulse 2s ease-in-out infinite;
+  width: 40%;
+}
+.queue-cancel {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: #555;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+.queue-cancel:hover { color: #aaa; background: rgba(255,255,255,0.04); }
+
+/* Footer */
+.footer {
+  position: fixed;
+  bottom: 20px;
+  font-size: 12px;
+  color: #333;
+  animation: fadeIn 0.6s ease 0.5s both;
+}
+.footer a { color: #555; text-decoration: none; }
+.footer a:hover { color: #888; }
+
+@media (max-width: 500px) {
+  .cards { grid-template-columns: 1fr; }
+  .queue-box { padding: 36px 24px; }
+}
+</style>
+</head>
+<body>
+
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<div class="content">
+  <div class="hero-tag">Free Invite Codes</div>
+  <h1>ChatCut <em>Codes</em></h1>
+  <p class="subtitle">Stop paying for free invite codes. Grab one or share your spare — help the community access Seedance 2.</p>
+
+  <div class="live-bar">
+    <span class="live-dot"></span>
+    <span><span class="num" id="live-active">—</span> browsing</span>
+    <span style="color:#333;">·</span>
+    <span><span class="num" id="live-codes">—</span> codes available</span>
+  </div>
+
+  <div class="cards">
+    <a class="card card-get" onclick="handleGetCode(event)" href="#">
+      <span class="card-icon">🎟️</span>
+      <div class="card-title">Get a Code</div>
+      <div class="card-desc">Browse available invite codes and claim one for free</div>
+      <div class="card-arrow">→</div>
+    </a>
+    <a class="card card-share" href="share.html">
+      <span class="card-icon">🤝</span>
+      <div class="card-title">Share a Code</div>
+      <div class="card-desc">Donate your spare invite codes to help others</div>
+      <div class="card-arrow">→</div>
+    </a>
+  </div>
+</div>
+
+<!-- QUEUE OVERLAY -->
+<div class="queue-overlay" id="queue-overlay">
+  <div class="queue-box">
+    <h2>You're in <em>line</em></h2>
+    <p class="queue-sub">We limit access to 5 people at a time so codes stay available. Hang tight!</p>
+    <div class="queue-position" id="queue-pos">—</div>
+    <div class="queue-label">Position in queue</div>
+    <div class="queue-bar"><div class="queue-bar-inner"></div></div>
+    <button class="queue-cancel" onclick="leaveQueue()">Leave queue</button>
+  </div>
+</div>
+
+<div class="footer">
+  Built with 🤍 to fight code scalpers
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script>
+let db;
+try { db = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY); } catch {}
+
+// Generate or retrieve session ID
+function getSessionId() {
+  let sid = sessionStorage.getItem("chatcut_session");
+  if (!sid) {
+    sid = crypto.randomUUID();
+    sessionStorage.setItem("chatcut_session", sid);
+  }
+  return sid;
+}
+
+let pollInterval = null;
+
+// Load live stats
+async function loadStats() {
+  if (!db) return;
+  try {
+    const [queueRes, statsRes] = await Promise.all([
+      db.rpc("get_queue_info"),
+      db.rpc("get_code_stats"),
+    ]);
+    if (queueRes.data) {
+      document.getElementById("live-active").textContent = queueRes.data.active || 0;
+    }
+    if (statsRes.data) {
+      const total = (statsRes.data.confirmed_available || 0) + (statsRes.data.community_available || 0);
+      document.getElementById("live-codes").textContent = total;
+    }
+  } catch {}
+}
+
+// Handle "Get a Code" click
+async function handleGetCode(e) {
+  e.preventDefault();
+  if (!db) { window.location.href = "codes.html"; return; }
+
+  try {
+    const sid = getSessionId();
+    const { data, error } = await db.rpc("join_queue", { p_session_id: sid });
+    if (error) throw error;
+
+    if (data.status === "active") {
+      // Let them through — store session for codes.html to verify
+      sessionStorage.setItem("chatcut_queue_active", "true");
+      window.location.href = "codes.html";
+    } else {
+      // Show queue
+      showQueue(data.position);
+    }
+  } catch (err) {
+    console.error("Queue error:", err);
+    // Fallback: let them through
+    window.location.href = "codes.html";
+  }
+}
+
+function showQueue(position) {
+  document.getElementById("queue-overlay").classList.add("show");
+  document.getElementById("queue-pos").textContent = position;
+
+  // Poll every 4 seconds
+  clearInterval(pollInterval);
+  pollInterval = setInterval(async () => {
+    try {
+      const sid = getSessionId();
+      const { data } = await db.rpc("join_queue", { p_session_id: sid });
+      if (data.status === "active") {
+        clearInterval(pollInterval);
+        sessionStorage.setItem("chatcut_queue_active", "true");
+        window.location.href = "codes.html";
+      } else {
+        document.getElementById("queue-pos").textContent = data.position;
+      }
+    } catch {}
+  }, 4000);
+}
+
+async function leaveQueue() {
+  clearInterval(pollInterval);
+  document.getElementById("queue-overlay").classList.remove("show");
+  try {
+    const sid = getSessionId();
+    await db.rpc("leave_queue", { p_session_id: sid });
+  } catch {}
+}
+
+// Escape to close queue
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") leaveQueue();
+});
+
+// Init
+loadStats();
+// Refresh stats every 15s
+setInterval(loadStats, 15000);
+</script>
+</body>
+</html>
