@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChatCut Free Codes — Stop Paying for Invite Codes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+::selection { background: rgba(194,135,255,0.3); color: #fff; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+
+:root {
+  --bg: #0a0a0a;
+  --surface: rgba(255,255,255,0.03);
+  --surface-hover: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.08);
+  --border-hover: rgba(255,255,255,0.15);
+  --text: #e8e6e3;
+  --text-dim: #777;
+  --text-muted: #555;
+  --accent: #c287ff;
+  --accent-bg: rgba(194,135,255,0.15);
+  --accent-border: rgba(194,135,255,0.3);
+  --green: #81c784;
+  --green-bg: rgba(76,175,80,0.1);
+  --green-border: rgba(76,175,80,0.25);
+  --amber: #ffb74d;
+  --amber-bg: rgba(255,183,77,0.1);
+  --amber-border: rgba(255,183,77,0.2);
+  --red: #c4463a;
+  --red-bg: rgba(198,70,60,0.1);
+  --red-border: rgba(198,70,60,0.2);
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pulse { 0%,100% { opacity: 0.4; } 50% { opacity: 1; } }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.anim-1 { animation: slideUp 0.6s ease both; }
+.anim-2 { animation: slideUp 0.6s ease 0.1s both; }
+.anim-3 { animation: slideUp 0.6s ease 0.2s both; }
+.anim-4 { animation: slideUp 0.6s ease 0.3s both; }
+
+.container { max-width: 740px; margin: 0 auto; padding: 0 20px; }
+
+/* Hero */
+.hero { text-align: center; padding: 64px 20px 44px; position: relative; }
+.hero::before {
+  content: ''; position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -60%); width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(194,135,255,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-tag {
+  font-family: var(--font-mono); font-size: 12px; color: var(--accent);
+  letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 16px;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 7vw, 74px); font-weight: 400;
+  color: var(--text); line-height: 1.05; margin-bottom: 16px;
+}
+.hero h1 em { color: var(--accent); font-style: italic; }
+.hero p {
+  font-size: 17px; color: var(--text-dim); max-width: 500px;
+  margin: 0 auto 36px; line-height: 1.65;
+}
+
+/* Stats */
+.stats { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+.stat-val { font-family: var(--font-display); font-size: 38px; color: var(--text); line-height: 1; }
+.stat-label { font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px; }
+.stat-label span { color: #555; }
+
+/* Toolbar */
+.toolbar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; }
+.filter-group { display: flex; gap: 6px; }
+
+/* Buttons */
+.btn {
+  font-family: var(--font-body); font-size: 13px; font-weight: 500;
+  border: none; border-radius: 8px; padding: 8px 16px;
+  cursor: pointer; transition: all 0.2s ease; outline: none; white-space: nowrap;
+}
+.btn:hover { filter: brightness(1.2); }
+.btn-sm { padding: 6px 12px; font-size: 12px; border-radius: 6px; }
+.btn-filter { background: rgba(255,255,255,0.04); color: #666; border: 1px solid var(--border); }
+.btn-filter.active { background: var(--accent-bg); color: var(--accent); border-color: var(--accent-border); }
+.btn-share { background: rgba(255,255,255,0.06); color: #aaa; border: 1px solid rgba(255,255,255,0.12); }
+.btn-copy { background: rgba(255,255,255,0.06); color: #aaa; border: 1px solid rgba(255,255,255,0.1); }
+.btn-copy.copied { background: var(--green-bg); color: var(--green); border-color: var(--green-border); }
+.btn-used { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+.btn-restore { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+.btn-report { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); font-size: 11px; }
+.btn-primary-lg {
+  background: var(--accent-bg); color: var(--accent); border: 1px solid var(--accent-border);
+  width: 100%; padding: 12px 20px; font-size: 14px;
+}
+.btn:disabled { opacity: 0.35; cursor: not-allowed; filter: none; }
+.btn-refresh { background: rgba(255,255,255,0.04); color: #666; border: 1px solid var(--border); }
+
+/* Sections */
+.section { margin-bottom: 44px; }
+.section-header {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+  font-size: 14px; font-weight: 600; color: #999;
+  text-transform: uppercase; letter-spacing: 0.06em;
+}
+.section-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.section-count {
+  font-family: var(--font-mono); font-size: 11px; color: #555;
+  background: rgba(255,255,255,0.04); padding: 2px 8px; border-radius: 4px;
+}
+.section-note {
+  margin-left: auto; font-size: 11px; color: #555;
+  font-weight: 400; text-transform: none; letter-spacing: 0;
+}
+
+/* Code Cards */
+.code-list { display: flex; flex-direction: column; gap: 8px; }
+.code-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+  padding: 16px 20px; display: flex; align-items: center;
+  justify-content: space-between; gap: 12px; transition: all 0.2s ease;
+  position: relative; overflow: hidden;
+}
+.code-card:hover { background: var(--surface-hover); border-color: var(--border-hover); }
+.code-card.dimmed { opacity: 0.4; }
+.code-card.dimmed::after {
+  content: ''; position: absolute; inset: 0;
+  background: repeating-linear-gradient(135deg, transparent, transparent 10px, rgba(255,255,255,0.012) 10px, rgba(255,255,255,0.012) 20px);
+  pointer-events: none;
+}
+.code-text {
+  font-family: var(--font-mono); font-size: 15px;
+  letter-spacing: 0.04em; color: var(--text); word-break: break-all;
+}
+.code-card.dimmed .code-text { color: #555; text-decoration: line-through; }
+.code-meta { font-size: 11px; color: #555; margin-top: 4px; }
+.code-meta .reports { color: var(--red); margin-left: 8px; }
+.code-info { flex: 1; min-width: 0; }
+.code-actions { display: flex; gap: 6px; flex-shrink: 0; align-items: center; }
+
+/* Badges */
+.badge {
+  font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+  padding: 3px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.06em;
+}
+.badge-available { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+.badge-used { background: rgba(255,255,255,0.04); color: #666; border: 1px solid var(--border); }
+
+/* Empty / Loading */
+.empty {
+  text-align: center; padding: 40px 20px; color: #444; font-size: 14px;
+  border: 1px dashed rgba(255,255,255,0.06); border-radius: 12px;
+}
+.loading-spinner {
+  width: 20px; height: 20px; border: 2px solid rgba(255,255,255,0.1);
+  border-top-color: var(--accent); border-radius: 50%;
+  animation: spin 0.7s linear infinite; display: inline-block; vertical-align: middle;
+  margin-right: 10px;
+}
+.loading-bar {
+  text-align: center; padding: 32px; color: #555; font-size: 14px;
+}
+
+/* Modal */
+.overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 100; animation: fadeIn 0.2s ease; padding: 20px;
+}
+.overlay.hidden { display: none; }
+.modal {
+  background: #141414; border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px; padding: 32px; width: 100%; max-width: 460px;
+  animation: slideUp 0.3s ease;
+}
+.modal h2 {
+  font-family: var(--font-display); font-size: 28px; font-weight: 400;
+  color: var(--text); margin-bottom: 8px;
+}
+.modal .sub { font-size: 14px; color: var(--text-dim); margin-bottom: 20px; line-height: 1.5; }
+.modal textarea {
+  width: 100%; background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+  border-radius: 10px; padding: 14px 16px; color: var(--text);
+  font-family: var(--font-mono); font-size: 13px; outline: none;
+  transition: border-color 0.2s; min-height: 120px; resize: vertical; line-height: 1.7;
+}
+.modal textarea:focus { border-color: rgba(194,135,255,0.4); }
+.modal textarea::placeholder { color: #444; }
+.modal .btn { margin-top: 12px; }
+
+/* Toast */
+.toast {
+  position: fixed; top: 24px; left: 50%; transform: translateX(-50%);
+  padding: 12px 28px; border-radius: 10px; font-size: 14px; font-weight: 500;
+  color: #fff; z-index: 200; animation: slideUp 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4); pointer-events: none;
+}
+.toast.hidden { display: none; }
+.toast-success { background: #2e7d32; }
+.toast-error { background: #c4463a; }
+.toast-warn { background: #e68a00; }
+
+/* Connection status */
+.conn-status {
+  position: fixed; bottom: 16px; right: 16px;
+  font-family: var(--font-mono); font-size: 11px; padding: 6px 12px;
+  border-radius: 6px; z-index: 50;
+}
+.conn-ok { background: rgba(76,175,80,0.1); color: var(--green); border: 1px solid var(--green-border); }
+.conn-err { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+
+/* Footer */
+.footer {
+  text-align: center; padding: 36px 20px;
+  border-top: 1px solid rgba(255,255,255,0.04);
+  font-size: 13px; color: #444; line-height: 1.9;
+}
+.footer span { color: #555; }
+
+@media (max-width: 600px) {
+  .code-card { flex-direction: column; align-items: flex-start; }
+  .code-actions { width: 100%; flex-wrap: wrap; }
+  .toolbar { flex-direction: column; align-items: stretch; }
+  .filter-group { justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<a href="index.html" id="back-link" style="position:fixed;top:20px;left:20px;font-family:'DM Sans',sans-serif;font-size:13px;color:#555;text-decoration:none;display:flex;align-items:center;gap:6px;padding:8px 14px;border-radius:8px;transition:all 0.2s;border:1px solid transparent;z-index:50;" onmouseover="this.style.color='#aaa';this.style.background='rgba(255,255,255,0.04)';this.style.borderColor='rgba(255,255,255,0.06)'" onmouseout="this.style.color='#555';this.style.background='transparent';this.style.borderColor='transparent'">← Back</a>
+
+<div id="toast" class="toast hidden"></div>
+<div id="conn-status" class="conn-status"></div>
+
+<!-- HERO -->
+<div class="hero anim-1">
+  <div class="hero-tag">Free Invite Codes</div>
+  <h1>ChatCut <em>Codes</em></h1>
+  <p>Stop paying for free invite codes. Grab one below, try Seedance 2, and share the love.</p>
+  <div class="stats">
+    <div>
+      <div class="stat-val" id="stat-confirmed">—</div>
+      <div class="stat-label">Confirmed <span id="stat-confirmed-total"></span></div>
+    </div>
+    <div>
+      <div class="stat-val" id="stat-community">—</div>
+      <div class="stat-label">Community <span id="stat-community-total"></span></div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="container">
+  <div class="toolbar anim-2">
+    <div class="filter-group">
+      <button class="btn btn-sm btn-filter active" data-filter="available">Available</button>
+      <button class="btn btn-sm btn-filter" data-filter="used">Used</button>
+      <button class="btn btn-sm btn-filter" data-filter="all">All</button>
+    </div>
+    <div style="display:flex;gap:8px;">
+      <button class="btn btn-sm btn-refresh" onclick="loadAllCodes()">↻ Refresh</button>
+      <button class="btn btn-sm btn-share" onclick="openUserModal()">+ Share Code</button>
+    </div>
+  </div>
+
+  <!-- Confirmed -->
+  <div class="section anim-3">
+    <div class="section-header">
+      <div class="section-dot" style="background:#c287ff;"></div>
+      <span>Confirmed Invites</span>
+      <span class="section-count" id="count-confirmed">0</span>
+    </div>
+    <div class="code-list" id="confirmed-list">
+      <div class="loading-bar"><span class="loading-spinner"></span>Loading codes...</div>
+    </div>
+  </div>
+
+  <!-- Community -->
+  <div class="section anim-4">
+    <div class="section-header">
+      <div class="section-dot" style="background:#ffb74d;"></div>
+      <span>Community Invites</span>
+      <span class="section-count" id="count-community">0</span>
+      <span class="section-note">unverified — use at own risk</span>
+    </div>
+    <div class="code-list" id="community-list">
+      <div class="loading-bar"><span class="loading-spinner"></span>Loading codes...</div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  Free codes, no scams. Don't pay for invite codes that should be free.<br>
+  <span>Built with 🤍 to fight code scalpers</span>
+</div>
+
+<!-- USER SHARE MODAL -->
+<div id="user-modal" class="overlay hidden" onclick="closeUserModal()">
+  <div class="modal" onclick="event.stopPropagation()">
+    <h2>Share a Code</h2>
+    <p class="sub">Paste invite codes to share with the community. One per line or comma-separated. These appear under Community Invites (unverified).</p>
+    <textarea id="user-codes" placeholder="ABC123&#10;XY9Z4K&#10;R2D2C3" style="text-transform:uppercase;"></textarea>
+    <div style="font-size:12px;color:#555;margin-top:8px;">Format: exactly 6 characters, A-Z and 0-9 only (e.g. ABC123)</div>
+    <button class="btn btn-primary-lg" id="btn-submit-user" onclick="submitUserCodes()">Share with Community</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script>
+// ============================================
+//  INIT SUPABASE (public anon key only)
+// ============================================
+let db;
+let connected = false;
+
+try {
+  db = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  connected = true;
+} catch (e) {
+  console.error("Supabase init failed:", e);
+}
+
+let confirmedCodes = [];
+let communityCodes = [];
+let currentFilter = "available";
+
+// ============================================
+//  CONNECTION STATUS
+// ============================================
+function updateConnStatus(ok) {
+  const el = document.getElementById("conn-status");
+  if (ok) {
+    el.className = "conn-status conn-ok";
+    el.textContent = "● Connected";
+    setTimeout(() => el.style.opacity = "0", 3000);
+  } else {
+    el.className = "conn-status conn-err";
+    el.textContent = "● Offline — check config.js";
+    el.style.opacity = "1";
+  }
+}
+
+// ============================================
+//  TOAST
+// ============================================
+let toastTimer;
+function showToast(msg, type = "success") {
+  const el = document.getElementById("toast");
+  el.textContent = msg;
+  el.className = "toast toast-" + type;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.className = "toast hidden", 3000);
+}
+
+// ============================================
+//  DATA LOADING
+// ============================================
+async function loadAllCodes() {
+  if (!db) { updateConnStatus(false); return; }
+  try {
+    const { data, error } = await db
+      .from("codes")
+      .select("*")
+      .order("created_at", { ascending: false });
+
+    if (error) throw error;
+
+    confirmedCodes = data.filter(c => c.type === "confirmed");
+    communityCodes = data.filter(c => c.type === "community");
+    updateConnStatus(true);
+    render();
+  } catch (e) {
+    console.error("Load error:", e);
+    updateConnStatus(false);
+    document.getElementById("confirmed-list").innerHTML = '<div class="empty">Failed to load — check config.js</div>';
+    document.getElementById("community-list").innerHTML = '<div class="empty">Failed to load — check config.js</div>';
+  }
+}
+
+// ============================================
+//  RENDERING
+// ============================================
+function escapeHtml(str) {
+  const d = document.createElement("div");
+  d.textContent = str;
+  return d.innerHTML;
+}
+
+function filterCodes(codes) {
+  if (currentFilter === "all") return codes;
+  return codes.filter(c => c.status === currentFilter);
+}
+
+function renderCard(code, isConfirmed) {
+  const dim = code.status !== "available";
+  const dateStr = new Date(code.created_at).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+  const reports = (!isConfirmed && code.reports > 0)
+    ? `<span class="reports">⚠ ${code.reports} report${code.reports > 1 ? "s" : ""}</span>` : "";
+
+  const badgeClass = code.status === "available" ? "badge-available" : "badge-used";
+  const badgeText = code.status === "available" ? "Available" : "Used";
+
+  let actions = `<span class="badge ${badgeClass}">${badgeText}</span>`;
+
+  if (code.status === "available") {
+    actions += `
+      <button class="btn btn-sm btn-copy" id="copy-${code.id}" onclick="copyCode('${code.id}')">Copy</button>
+      <button class="btn btn-sm btn-used" onclick="markStatus('${code.id}','used')">Mark Used</button>`;
+  } else {
+    actions += `<button class="btn btn-sm btn-restore" onclick="markStatus('${code.id}','available')">Mark Available</button>`;
+  }
+
+  if (!isConfirmed) {
+    actions += `<button class="btn btn-sm btn-report" onclick="reportCode('${code.id}')">Fake?</button>`;
+  }
+
+  return `
+    <div class="code-card ${dim ? 'dimmed' : ''}">
+      <div class="code-info">
+        <div class="code-text">${escapeHtml(code.code)}</div>
+        <div class="code-meta">${dateStr}${reports}</div>
+      </div>
+      <div class="code-actions">${actions}</div>
+    </div>`;
+}
+
+function render() {
+  const fc = filterCodes(confirmedCodes);
+  const fu = filterCodes(communityCodes);
+
+  document.getElementById("confirmed-list").innerHTML = fc.length
+    ? fc.map(c => renderCard(c, true)).join("")
+    : `<div class="empty">No ${currentFilter !== "all" ? currentFilter : ""} confirmed codes right now — check back soon!</div>`;
+
+  document.getElementById("community-list").innerHTML = fu.length
+    ? fu.map(c => renderCard(c, false)).join("")
+    : `<div class="empty">No community codes yet — be the first to share one!</div>`;
+
+  document.getElementById("count-confirmed").textContent = fc.length;
+  document.getElementById("count-community").textContent = fu.length;
+
+  const ca = confirmedCodes.filter(c => c.status === "available").length;
+  const ua = communityCodes.filter(c => c.status === "available").length;
+  document.getElementById("stat-confirmed").textContent = ca;
+  document.getElementById("stat-confirmed-total").textContent = "of " + confirmedCodes.length;
+  document.getElementById("stat-community").textContent = ua;
+  document.getElementById("stat-community-total").textContent = "of " + communityCodes.length;
+}
+
+// ============================================
+//  ACTIONS
+// ============================================
+function copyCode(id) {
+  const all = [...confirmedCodes, ...communityCodes];
+  const code = all.find(c => c.id === id);
+  if (!code) return;
+  navigator.clipboard.writeText(code.code).then(() => {
+    const btn = document.getElementById("copy-" + id);
+    if (btn) { btn.textContent = "✓"; btn.classList.add("copied"); setTimeout(() => { btn.textContent = "Copy"; btn.classList.remove("copied"); }, 2000); }
+    showToast("Code copied!");
+  });
+}
+
+async function markStatus(id, newStatus) {
+  try {
+    const { error } = await db
+      .from("codes")
+      .update({ status: newStatus })
+      .eq("id", id);
+    if (error) throw error;
+
+    // Update local state
+    confirmedCodes = confirmedCodes.map(c => c.id === id ? { ...c, status: newStatus } : c);
+    communityCodes = communityCodes.map(c => c.id === id ? { ...c, status: newStatus } : c);
+    render();
+  } catch (e) {
+    showToast("Failed to update — " + e.message, "error");
+  }
+}
+
+async function reportCode(id) {
+  try {
+    const { error } = await db.rpc("report_code", { code_id: id });
+    if (error) throw error;
+    showToast("Reported — codes with 5+ reports get removed", "warn");
+    await loadAllCodes(); // Reload to reflect changes
+  } catch (e) {
+    showToast("Failed to report — " + e.message, "error");
+  }
+}
+
+// ============================================
+//  USER SHARE MODAL
+// ============================================
+function openUserModal() {
+  document.getElementById("user-modal").classList.remove("hidden");
+  setTimeout(() => document.getElementById("user-codes").focus(), 100);
+}
+function closeUserModal() {
+  document.getElementById("user-modal").classList.add("hidden");
+  document.getElementById("user-codes").value = "";
+}
+
+function validateCode(str) {
+  return /^[A-Z0-9]{6}$/.test(str);
+}
+
+async function submitUserCodes() {
+  const raw = document.getElementById("user-codes").value;
+  const lines = raw.split(/[\n,]+/).map(s => s.trim().toUpperCase()).filter(Boolean);
+  if (!lines.length) return;
+
+  const invalid = lines.filter(c => !validateCode(c));
+  if (invalid.length) {
+    showToast(`Invalid code(s): ${invalid.join(", ")} — must be exactly 6 uppercase alphanumeric characters`, "error");
+    return;
+  }
+
+  const btn = document.getElementById("btn-submit-user");
+  btn.disabled = true;
+  btn.textContent = "Submitting...";
+
+  try {
+    const rows = lines.map(code => ({ code, type: "community", status: "available", reports: 0 }));
+    const { error } = await db.from("codes").insert(rows);
+    if (error) throw error;
+
+    closeUserModal();
+    showToast(`Submitted ${lines.length} code(s) — thank you!`);
+    await loadAllCodes();
+  } catch (e) {
+    if (e.message?.includes("duplicate")) {
+      showToast("One or more codes already exist", "warn");
+    } else {
+      showToast("Failed — " + e.message, "error");
+    }
+  }
+  btn.disabled = false;
+  btn.textContent = "Share with Community";
+}
+
+// ============================================
+//  FILTERS
+// ============================================
+document.querySelectorAll(".btn-filter").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".btn-filter").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    currentFilter = btn.dataset.filter;
+    render();
+  });
+});
+
+// Close modals on Escape
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") closeUserModal();
+});
+
+// ============================================
+//  QUEUE ENFORCEMENT
+// ============================================
+function getSessionId() {
+  let sid = sessionStorage.getItem("chatcut_session");
+  if (!sid) {
+    sid = crypto.randomUUID();
+    sessionStorage.setItem("chatcut_session", sid);
+  }
+  return sid;
+}
+
+let heartbeatInterval = null;
+
+async function verifyQueueSession() {
+  const allowed = sessionStorage.getItem("chatcut_queue_active");
+  if (!allowed) {
+    window.location.href = "index.html";
+    return false;
+  }
+  if (!db) return true;
+  try {
+    const sid = getSessionId();
+    const { data } = await db.rpc("heartbeat", { p_session_id: sid });
+    if (!data || data.status !== "active") {
+      sessionStorage.removeItem("chatcut_queue_active");
+      window.location.href = "index.html";
+      return false;
+    }
+  } catch {}
+  return true;
+}
+
+function startHeartbeat() {
+  clearInterval(heartbeatInterval);
+  heartbeatInterval = setInterval(async () => {
+    try {
+      const sid = getSessionId();
+      const { data } = await db.rpc("heartbeat", { p_session_id: sid });
+      if (data && data.status === "expired") {
+        sessionStorage.removeItem("chatcut_queue_active");
+        window.location.href = "index.html";
+      }
+    } catch {}
+  }, 25000);
+}
+
+function cleanupOnLeave() {
+  const sid = sessionStorage.getItem("chatcut_session");
+  if (sid && db) {
+    const url = SUPABASE_URL + "/rest/v1/rpc/leave_queue";
+    const body = JSON.stringify({ p_session_id: sid });
+    navigator.sendBeacon(
+      url + "?apikey=" + SUPABASE_ANON_KEY,
+      new Blob([body], { type: "application/json" })
+    );
+  }
+  sessionStorage.removeItem("chatcut_queue_active");
+}
+
+window.addEventListener("beforeunload", cleanupOnLeave);
+
+document.getElementById("back-link")?.addEventListener("click", () => {
+  cleanupOnLeave();
+});
+
+// ============================================
+//  INIT
+// ============================================
+(async function init() {
+  const valid = await verifyQueueSession();
+  if (valid) {
+    startHeartbeat();
+    loadAllCodes();
+  }
+})();
+</script>
+</body>
+</html>

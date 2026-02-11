@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Share a Code — ChatCut Free Codes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+::selection { background: rgba(100,200,150,0.3); color: #fff; }
+
+body {
+  background: #0a0a0a;
+  color: #e8e6e3;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.back {
+  position: fixed;
+  top: 20px; left: 20px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: #555;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+}
+.back:hover { color: #aaa; background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.06); }
+
+.container {
+  max-width: 520px;
+  width: 100%;
+  animation: slideUp 0.5s ease;
+}
+
+.icon { font-size: 44px; margin-bottom: 20px; text-align: center; display: block; }
+
+h1 {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(36px, 6vw, 48px);
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 8px;
+}
+h1 em { color: #81c784; font-style: italic; }
+
+.subtitle {
+  text-align: center;
+  font-size: 15px;
+  color: #777;
+  line-height: 1.6;
+  margin-bottom: 36px;
+}
+
+.card {
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px;
+  padding: 32px;
+}
+
+label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+
+textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 14px 16px;
+  color: #e8e6e3;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.7;
+}
+textarea:focus { border-color: rgba(100,200,150,0.4); }
+textarea::placeholder { color: #444; }
+
+.hint {
+  font-size: 12px;
+  color: #555;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 14px 20px;
+  border: 1px solid rgba(100,200,150,0.25);
+  border-radius: 10px;
+  background: rgba(100,200,150,0.1);
+  color: #81c784;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-submit:hover { filter: brightness(1.2); }
+.btn-submit:disabled { opacity: 0.35; cursor: not-allowed; filter: none; }
+
+/* Status */
+.status {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.6;
+  display: none;
+}
+.status.show { display: block; }
+.status-ok { background: rgba(76,175,80,0.08); border: 1px solid rgba(76,175,80,0.2); color: #81c784; }
+.status-err { background: rgba(198,70,60,0.08); border: 1px solid rgba(198,70,60,0.2); color: #c4463a; }
+
+/* Recent donations */
+.recent { margin-top: 32px; }
+.recent h3 {
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+  text-align: center;
+}
+.recent-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+.recent-chip {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: #666;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 5px 12px;
+  border-radius: 6px;
+}
+.recent-chip.available { color: #81c784; border-color: rgba(100,200,150,0.15); }
+.recent-chip.used { color: #555; text-decoration: line-through; }
+.empty-recent { color: #444; font-size: 13px; text-align: center; padding: 16px; }
+</style>
+</head>
+<body>
+
+<a href="index.html" class="back">← Back</a>
+
+<div class="container">
+  <span class="icon">🤝</span>
+  <h1>Share a <em>Code</em></h1>
+  <p class="subtitle">Donate your spare invite codes so others can access ChatCut for free. No queue required.</p>
+
+  <div class="card">
+    <label>Your Invite Code(s)</label>
+    <textarea id="codes-input" placeholder="ABC123" maxlength="500"></textarea>
+    <div class="hint">One code per line or comma-separated. Codes must be exactly 6 characters — uppercase letters and numbers only.</div>
+    <button class="btn-submit" id="btn-submit" onclick="submitCodes()">Share with Community</button>
+    <div id="status" class="status"></div>
+  </div>
+
+  <div class="recent">
+    <h3>Recently Shared</h3>
+    <div id="recent-list" class="recent-grid">
+      <div class="empty-recent">Loading...</div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script>
+let db;
+try { db = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY); } catch {}
+
+const CODE_REGEX = /^[A-Z0-9]{6}$/;
+
+function showStatus(msg, ok) {
+  const el = document.getElementById("status");
+  el.textContent = msg;
+  el.className = "status show " + (ok ? "status-ok" : "status-err");
+}
+
+async function submitCodes() {
+  const raw = document.getElementById("codes-input").value;
+  const lines = raw.split(/[\n,]+/).map(s => s.trim().toUpperCase()).filter(Boolean);
+
+  if (!lines.length) {
+    showStatus("Please enter at least one code.", false);
+    return;
+  }
+
+  const invalid = lines.filter(c => !CODE_REGEX.test(c));
+  if (invalid.length) {
+    showStatus(`Invalid: ${invalid.join(", ")} — must be exactly 6 characters, uppercase A-Z and 0-9 only.`, false);
+    return;
+  }
+
+  const btn = document.getElementById("btn-submit");
+  btn.disabled = true;
+  btn.textContent = "Submitting...";
+
+  try {
+    const rows = lines.map(code => ({ code, type: "community", status: "available", reports: 0 }));
+    const { error } = await db.from("codes").insert(rows);
+    if (error) throw error;
+
+    document.getElementById("codes-input").value = "";
+    showStatus(`✓ Shared ${lines.length} code(s) — thank you! These appear under Community Invites.`, true);
+    loadRecent();
+  } catch (e) {
+    if (e.message?.includes("duplicate")) {
+      showStatus("One or more codes already exist in the database.", false);
+    } else {
+      showStatus("Error: " + e.message, false);
+    }
+  }
+  btn.disabled = false;
+  btn.textContent = "Share with Community";
+}
+
+async function loadRecent() {
+  if (!db) return;
+  try {
+    const { data, error } = await db
+      .from("codes")
+      .select("code, status")
+      .eq("type", "community")
+      .order("created_at", { ascending: false })
+      .limit(20);
+
+    if (error) throw error;
+    const el = document.getElementById("recent-list");
+    if (!data || !data.length) {
+      el.innerHTML = '<div class="empty-recent">No community codes yet — be the first!</div>';
+      return;
+    }
+    el.innerHTML = data.map(c =>
+      `<span class="recent-chip ${c.status}">${c.code}</span>`
+    ).join("");
+  } catch {
+    document.getElementById("recent-list").innerHTML = '<div class="empty-recent">Could not load</div>';
+  }
+}
+
+loadRecent();
+</script>
+</body>
+</html>
